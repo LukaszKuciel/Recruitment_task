@@ -24,9 +24,7 @@ export default class extends HTMLElement {
     this.appendChild(this.element);
     const btngroup = document.querySelector('.schibsted-dropdown-btn-group');
     this.options = document.querySelector('.schibsted-dropdown-options');
-    this.options.onblur = () => {
-      this.element.classList.remove('open');
-    };
+
     this.label = document.createElement('label');
     this.label.className = 'schibsted-dropdown-label';
     this.label.innerText = this.getAttribute('data-value').toUpperCase();
@@ -40,7 +38,6 @@ export default class extends HTMLElement {
       if (this.element.classList.contains('open')) {
         this.element.classList.remove('open');
       } else {
-        document.querySelector('.schibsted-dropdown-options').focus();
         this.element.classList.add('open');
       }
     };

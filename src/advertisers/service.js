@@ -6,6 +6,7 @@ export default async function getAdvertisers(datatype = 'json') {
       method: 'GET',
       mode: 'cors',
       cache: 'no-cache',
+      credentials: 'omit',
       headers: {
         Accept: `application/${datatype}`,
         'Content-Type': `application/${datatype}`

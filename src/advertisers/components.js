@@ -12,7 +12,7 @@ export class ResponseDataPreview extends SchibstedResponsePreview {
 }
 
 /* In case of future performance IMHO this async func should be async generator function
-which will dynamically load new parts of data.
+which will dynamically load new parts of data. API should serve data in chunks.
 There should be also some filtering by parameters which will help to find specific data. */
 
 async function drawResponse(type) {
