@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Advertisors List</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="https://unpkg.com/@webcomponents/custom-elements"></script>
+    <script>
+            // hide body to prevent FOUC
+            // document.body.style.opacity = 0;
+            window.addEventListener('WebComponentsReady', function() {
+              // show body now that everything is ready
+              document.body.style.opacity = 1;
+            });
+          </script>
 </head>
 <body>
     <section>
