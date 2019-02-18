@@ -20,3 +20,12 @@ In my workflow i used eslint for code mainanence, babel and webpack for building
 
 I hope that you will like how I dealed with task that you gave me. I could do it better but currently I don't have many free time so this is it. 
 How to hear from you soon :)
+
+
+Task is avaiable on Heroku under this link:
+
+You can also start it with following instructions:
+1. Go to root of the project
+2. use 'npm install' command in terminal
+3. use 'npm start' command in terminal - it should build a project and start server
+4. task is available under localhost:3000
