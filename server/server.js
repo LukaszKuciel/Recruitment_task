@@ -1,11 +1,26 @@
 const fs = require('fs');
 
 const Hapi = require('hapi');
+const Inert = require('inert');
+const Path = require('path');
 
 const server = new Hapi.Server({
-  port: 3000,
+  port: process.env.PORT || 3000,
   host: 'localhost',
-  routes: { cors: true }
+  routes: {
+    cors: true,
+    files: {
+      relativeTo: Path.join(__dirname, '../dist/')
+    }
+  }
+});
+
+server.route({
+  method: 'GET',
+  path: '/{filename}',
+  handler(request, h) {
+    return h.file(request.params.filename);
+  }
 });
 
 server.route({
@@ -41,9 +56,20 @@ server.route({
   }
 });
 
-const init = async () => {
+const start = async () => {
+  await server.register(Inert);
+
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler(request, h) {
+      return h.file('index.html');
+    }
+  });
+
   await server.start();
-  console.log(`Server running at: ${server.info.uri}`);
+
+  console.log('Server running at:', server.info.uri);
 };
 
 process.on('unhandledRejection', (err) => {
@@ -51,4 +77,4 @@ process.on('unhandledRejection', (err) => {
   process.exit(1);
 });
 
-init();
+start();
