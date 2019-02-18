@@ -1,39 +1,35 @@
-const path =  require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-const extractPlugin = new ExtractTextPlugin({
-    filename: 'main.css'
-})
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/dist'
-    },
-    module: {
-        rules: [
-            { 
-                test: /\.js$/, 
-                use: [
-                    {
-                        loader: 'babel-loader',
-                        options:{
-                            presets: ['es2017']
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.scss$/,
-                use: extractPlugin.extract({
-                    use: ['css-loader', 'sass-loader']
-                })
-            }
+  mode: 'production',
+  plugins: [
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'main.css'
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader'
         ]
-    },
-    plugins: [
-        extractPlugin
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      }
     ]
-}
+  }
+};
