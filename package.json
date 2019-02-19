@@ -7,7 +7,7 @@
     "test": "eslint src",
     "dev": "npm run build && node server/server.js",
     "build": "webpack",
-    "start": "node server/server.js"
+    "start": "npm run build && node server/server.js"
   },
   "author": "Lukasz Kuciel",
   "license": "ISC",

@@ -24,7 +24,7 @@ How to hear from you soon :)
 
 Task is avaiable on Heroku under this link:
 
-You can also start it with following instructions:
+You can start peoject with following instructions:
 1. Go to root of the project
 2. use 'npm install' command in terminal
 3. use 'npm start' command in terminal - it should build a project and start server
