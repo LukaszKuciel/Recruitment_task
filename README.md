@@ -1,4 +1,4 @@
-#Schibsted recruitment task
+# Schibsted recruitment task
 
 I decided to use a structure that allows for endpoint specific services and components.
 
