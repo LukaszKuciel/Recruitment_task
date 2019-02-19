@@ -2,7 +2,7 @@
   "name": "schibsted",
   "version": "1.0.0",
   "description": "recruitment task",
-  "main": "index.js",
+  "main": "server/server.js",
   "scripts": {
     "test": "eslint src",
     "dev": "npm run build && node server/server.js",
@@ -12,9 +12,6 @@
   "author": "Lukasz Kuciel",
   "license": "ISC",
   "devDependencies": {
-    
-  },
-  "dependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "babel-loader": "^8.0.5",
@@ -32,7 +29,9 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/polyfill": "^7.2.5",
     "hapi": "^18.1.0",
