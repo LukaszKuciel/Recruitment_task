@@ -18,8 +18,8 @@ Additionaly I created simple node.js api with use of hapi.js there I created end
 
 In my workflow i used eslint for code mainanence, babel and webpack for building a project. There are some dependecies but they are mostly dev dependencies for bundling process. In production dependencies there is hapi(+inert), prism and babel pollyfill.
 
-I hope that you will like how I dealed with task that you gave me. I could do it better but currently I don't have many free time so this is it. 
-How to hear from you soon :)
+I hope that you will like how I dealed with task that you gave me. 
+I hope to hear from you soon :)
 
 You can start peoject with following instructions:
 1. Go to root of the project
